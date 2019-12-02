@@ -39,25 +39,13 @@ public class Player : MonoBehaviour
             
             transform.localScale = new Vector3(1, 1, 1);
         }   
-
+    
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
             PlaySound(1);
             rb2.AddForce(Vector2.up * jumpPower);
          
         }
-
-        /*
-        if (Input.GetButton("Horizontal") && grounded)
-        {
-
-            if (!GetComponent<AudioSource>().isPlaying)
-            {
-                PlaySound(0);
-            }
-        }
-        else Audio.Pause();
-        */
     }
     
 
