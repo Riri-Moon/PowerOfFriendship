@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public float jumpPower = 1500f;     
     public bool grounded;
     private Rigidbody2D rb2;
-
     private Animator anim;
 
     void Start()
@@ -29,9 +28,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") < -0.1f)
         {
-           
-            transform.localScale = new Vector3(-1, 1, 1);
-            
+           transform.localScale = new Vector3(-1, 1, 1);
+
         }
 
         if (Input.GetAxisRaw("Horizontal") > 0.1f)
@@ -72,4 +70,5 @@ public class Player : MonoBehaviour
         Audio.clip = Audioclip[clip];
         Audio.Play();
     }
+
 }

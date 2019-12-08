@@ -20,6 +20,7 @@ public class blikanie : MonoBehaviour
     public int smoothing = 5;
     private new AudioSource audio;
     public float DecreaseIntensity;
+    public bool IsActive;
 
     // Continuous average calculation via FIFO queue
     // Saves us iterating every time we update, we just change by the delta
@@ -56,7 +57,7 @@ public class blikanie : MonoBehaviour
 
         if (DesiredDistance < dist)
         {
-            audio.volume = audio.volume - DecreaseIntensity;
+            audio.volume -= DecreaseIntensity ;
         }
         else audio.volume = 0.1f;
 
@@ -78,6 +79,29 @@ public class blikanie : MonoBehaviour
 
         // Calculate new smoothed average
         light.intensity = lastSum / (float)smoothQueue.Count;
+
+        if(IsActive==true)
+        {
+            do
+            {
+                On_Off(light);
+            }
+            while (DesiredDistance < dist);
+        }
+    }
+
+    public void On_Off(Light2D Light)
+    {
+            //float distance = Vector3.Distance(body.transform.position, other.transform.position);
+            Light.enabled = true;
+            Waiter();
+            Light.enabled = false;
+    }
+
+
+    IEnumerable Waiter ()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 
 }
