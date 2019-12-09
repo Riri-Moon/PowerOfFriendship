@@ -34,6 +34,7 @@ public class GrabThat : MonoBehaviour
                  {
                     hit = Physics2D.Raycast(transform.position, (Vector2.right + (0.3f * Vector2.down)) * transform.localScale.x, distance);
                 }
+
                 else if (leftDot < -0.9f)
                  {
                     x.Set(0.3f * Mathf.Abs(Vector2.down.x), 0.3f * Mathf.Abs(Vector2.down.y));
@@ -44,9 +45,7 @@ public class GrabThat : MonoBehaviour
                 if (hit.collider != null && hit.collider.CompareTag("grabbable"))
                 {                    
                     grabbed = true;                
-                }
-                
-
+                }                
             }
              else if (!Physics2D.OverlapPoint(holdpoint.transform.position, notgrabbed))
 
