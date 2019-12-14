@@ -11,8 +11,7 @@ public class Load : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
-        Player.position = SpawnPoint_Factory.position;
-        
+        Player.position = SpawnPoint_Factory.position;        
     }
 
 }

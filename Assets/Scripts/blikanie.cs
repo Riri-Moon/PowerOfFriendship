@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.LWRP;
 
+
 public class blikanie : MonoBehaviour
 {
 
@@ -15,7 +16,12 @@ public class blikanie : MonoBehaviour
     [Tooltip("How much to smooth out the randomness; lower values = sparks, higher = lantern")]
     [Range(1, 50)]
     public int smoothing = 5;
-
+    private new AudioSource audio;
+    public bool IsActive;
+    public Transform other;
+    public float DesiredDistance;
+    public Rigidbody2D body;
+    public float DecreaseIntensity;
     // Continuous average calculation via FIFO queue
     // Saves us iterating every time we update, we just change by the delta
     Queue<float> smoothQueue;
@@ -35,6 +41,8 @@ public class blikanie : MonoBehaviour
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+
         smoothQueue = new Queue<float>(smoothing);
         // External or internal light?
         if (light == null)
@@ -47,6 +55,14 @@ public class blikanie : MonoBehaviour
     {
         if (light == null)
             return;
+
+        float dist = Vector3.Distance(body.transform.position, other.transform.position);
+
+        if (DesiredDistance < dist)
+        {
+            audio.volume -= DecreaseIntensity;
+        }
+        else audio.volume = 0.1f;
 
         // pop off an item if too big
         while (smoothQueue.Count >= smoothing)
@@ -61,6 +77,29 @@ public class blikanie : MonoBehaviour
 
         // Calculate new smoothed average
         light.intensity = lastSum / (float)smoothQueue.Count;
+
+        if (IsActive == true)
+        {
+            do
+            {
+                On_Off(light);
+            }
+            while (DesiredDistance < dist);
+        }
     }
 
+
+    public void On_Off(Light2D Light)
+    {
+        //float distance = Vector3.Distance(body.transform.position, other.transform.position);
+        Light.enabled = true;
+        Waiter();
+        Light.enabled = false;
+    }
+
+
+    IEnumerable Waiter()
+    {
+        yield return new WaitForSeconds(0.5f);
+    }
 }

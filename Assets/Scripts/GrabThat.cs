@@ -74,13 +74,13 @@ public class GrabThat : MonoBehaviour
 
         if (leftDot > 0.9f)
         {
-            Gizmos.DrawLine(transform.position, transform.position + (Vector3.right + (0.3f * Vector3.down)) * transform.localScale.x * distance);
+            Gizmos.DrawLine(transform.position, transform.position + (Vector3.right + (0.5f * Vector3.down)) * transform.localScale.x * distance);
 
         }
         else if (leftDot < -0.9f)
         {
 
-            xy.Set(0.3f * Mathf.Abs(Vector3.down.x), 0.3f * Mathf.Abs(Vector3.down.y), 0.3f * Mathf.Abs(Vector3.down.z));
+            xy.Set(0.5f * Mathf.Abs(Vector3.down.x), 0.5f * Mathf.Abs(Vector3.down.y), 0.5f * Mathf.Abs(Vector3.down.z));
             Gizmos.DrawLine(transform.position, transform.position + (Vector3.right + xy) * transform.localScale.x * distance);
         }
     }

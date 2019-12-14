@@ -17,8 +17,8 @@ public class ChangeScene : MonoBehaviour
             DontDestroyOnLoad(Player);
             //collision.transform.position = SpawnPoint.position; 
 
-            SceneManager.LoadScene(1);
-            OnLevelWasLoaded(1);
+            SceneManager.LoadScene(2);
+            OnLevelWasLoaded(2);
         }
     }
 

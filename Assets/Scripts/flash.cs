@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.LWRP;
+using UnityEngine.UI;
 
 namespace Flashlight
 {
@@ -12,10 +13,15 @@ namespace Flashlight
 		[SerializeField] GameObject hud_flash;
 		[SerializeField] GameObject hud_flash_center;
 		[SerializeField] GameObject hud_inventory;
-	
+        public battery loading;
+        private Inventory duration;
+        
         void Start()
         {
             light.enabled = false;
+            //
+            duration = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+            
         }
 
         // Update is called once per frame
@@ -23,19 +29,26 @@ namespace Flashlight
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                if (light.enabled == true)
+                     
+               
+                 if (light.enabled == false && duration.isfull[0]==true)
+                {
+                  
+                        light.enabled = true;
+                        hud_flash.SetActive(true);
+                        hud_flash_center.SetActive(true);
+                        hud_inventory.SetActive(false);
+                    }
+                    else if (duration.isfull[0]==false)
                 {
                     light.enabled = false;
-					hud_flash.SetActive (false);
-					hud_flash_center.SetActive(false);
-					hud_inventory.SetActive(true);
                 }
-                else if (light.enabled == false)
+                else if (light.enabled == true)
                 {
-                    light.enabled = true;
-					hud_flash.SetActive (true);
-					hud_flash_center.SetActive(true);
-					hud_inventory.SetActive(false);
+                    light.enabled = false;
+                    hud_flash.SetActive(false);
+                    hud_flash_center.SetActive(false);
+                    hud_inventory.SetActive(true);
                 }
             }
 
