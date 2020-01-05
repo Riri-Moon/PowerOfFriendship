@@ -7,6 +7,8 @@ TagManager:
   - grabbable
   - Edge
   - Pick_Battery
+  - CheckPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX

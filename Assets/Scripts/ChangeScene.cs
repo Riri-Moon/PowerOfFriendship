@@ -7,7 +7,7 @@ public class ChangeScene : MonoBehaviour
 {
 
     public Rigidbody2D Player;
-    [SerializeField] Transform SpawnPoint;
+    //[SerializeField] Transform SpawnPoint;
     
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +25,6 @@ public class ChangeScene : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         
-        Player.position = SpawnPoint.position;
+        Player.position = CheckpointController.GetActiveCheckPointPosition();
     }
 }

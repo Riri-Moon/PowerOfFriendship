@@ -75,8 +75,15 @@ public class Player : MonoBehaviour
         if (rb2.velocity.x < -maxSpeed)
         {
             rb2.velocity = new Vector2(-maxSpeed, rb2.velocity.y);
-        }
+        }       
 
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            rb2.transform.position = CheckpointController.GetActiveCheckPointPosition();
+        }
     }
 
     void PlaySound(int clip)
