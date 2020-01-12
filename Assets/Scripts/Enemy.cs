@@ -41,8 +41,6 @@ public class Enemy : MonoBehaviour
             //Waiter(2);
             enemy.SetActive(false);
         }
-      
-
 
     }
 

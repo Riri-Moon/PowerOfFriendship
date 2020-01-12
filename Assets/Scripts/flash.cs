@@ -31,7 +31,7 @@ namespace Flashlight
             {
                      
                
-                 if (light.enabled == false && duration.isfull[0]==true)
+                 if (light.enabled == false && duration.isfull[2]==true)
                 {
                   
                         light.enabled = true;
@@ -39,7 +39,7 @@ namespace Flashlight
                         hud_flash_center.SetActive(true);
                         hud_inventory.SetActive(false);
                     }
-                    else if (duration.isfull[0]==false)
+                    else if (duration.isfull[2]==false)
                 {
                     light.enabled = false;
                 }

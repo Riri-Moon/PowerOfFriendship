@@ -7,6 +7,8 @@ public class ChangeScene : MonoBehaviour
 {
 
     public Rigidbody2D Player;
+    public int Level;
+    public Transform New_Position;
     //[SerializeField] Transform SpawnPoint;
     
     void OnTriggerEnter2D(Collider2D collision)
@@ -14,11 +16,7 @@ public class ChangeScene : MonoBehaviour
         
         if(collision.CompareTag("Player"))
         {
-            DontDestroyOnLoad(Player);
-            //collision.transform.position = SpawnPoint.position; 
-
-            SceneManager.LoadScene(2);
-            OnLevelWasLoaded(2);
+            Player.position = New_Position.position;
         }
     }
 

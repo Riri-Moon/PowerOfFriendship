@@ -44,11 +44,11 @@ public class GrabThat : MonoBehaviour
 
             {
                 grabbed = false;
-                Debug.Log("Got it");
+                //Debug.Log("Got it");
                 if (hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
                 {
                     hit.collider.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x, 1) * throwforce;
-                    Debug.Log("Throw");
+                  //  Debug.Log("Throw");
 
                 }
             }
@@ -58,9 +58,7 @@ public class GrabThat : MonoBehaviour
         {
             hit.collider.gameObject.transform.position = holdpoint.position;
 
-        }
-
-        
+        }        
 
 
 

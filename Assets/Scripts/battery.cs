@@ -21,8 +21,8 @@ public class battery : MonoBehaviour
     }
     void Update()
     {       
-        if (duration.isfull[0] == true 
-            && Flash.light.enabled == true)
+        if (duration.isfull[2] == true 
+            && Flash.light.enabled == true )
         {
 
             Flash.light.enabled = true;
@@ -38,10 +38,10 @@ public class battery : MonoBehaviour
 
             if (LoadingBar.GetComponent<Image>().fillAmount <= 0)
             {
-                Debug.Log("Prislo to sem");
+               // Debug.Log("Prislo to sem");
 
 
-                duration.isfull[0] = false;
+                duration.isfull[2] = false;
                 Flash.light.enabled = false;
                 currentAmount = OriginalAmount;
 

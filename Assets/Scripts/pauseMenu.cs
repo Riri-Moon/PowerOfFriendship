@@ -11,8 +11,15 @@ public class pauseMenu : MonoBehaviour
 	[SerializeField] private bool isPaused;
 	
 	[SerializeField] private GameObject player;
-		
-	private void Update()
+    [SerializeField] Vector3 offset;
+
+
+    private void Start()
+    {
+        offset = (transform.position) - player.transform.position;
+    }
+
+    private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
