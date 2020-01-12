@@ -10,6 +10,8 @@ public class PickItUp : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
+	public GameObject slot_docuemnt;
+	public GameObject document_1;
     bool picked_battery=false;
     string component;
     public void Start() 
@@ -39,6 +41,10 @@ public class PickItUp : MonoBehaviour
                     gameObject.transform.localScale += new Vector3(2, 2, 2);
                     Instantiate(itemButton, inventory.slots[3].transform, false);
                     Destroy(gameObject);
+					document_1.SetActive(true);
+					slot_docuemnt.SetActive(true);
+				
+					
 
                 }
                 else if (component == "Pick_Key" && inventory.isfull[1] == false)

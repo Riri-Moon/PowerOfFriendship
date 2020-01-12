@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoonFollow : MonoBehaviour
 {
 
+	public GameObject hud;
     public GameObject Source;
     public Rigidbody2D Player;
     Vector3 offset;
@@ -14,6 +15,7 @@ public class MoonFollow : MonoBehaviour
     private void Update()
     {
         Clicked();
+		hud.SetActive(false);
     }
 
 
@@ -24,7 +26,6 @@ public class MoonFollow : MonoBehaviour
             offset2.Set(0, (transform.position.y + 10f), 0);
              offset = (transform.position) - Player.transform.position;
             Source.transform.position = Player.transform.position + (offset+offset2);
-            
         }
     }
 }
