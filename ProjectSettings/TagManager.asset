@@ -10,6 +10,8 @@ TagManager:
   - CheckPoint
   - Enemy
   - Document1
+  - Drop
+  - Road
   layers:
   - Default
   - TransparentFX

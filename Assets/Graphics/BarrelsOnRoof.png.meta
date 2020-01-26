@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: e205d11f0e1e6484ba59b0c75b622742
+guid: b43747d615cf3e448875da04dcd20968
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5669924347154653313
-    second: Factory_Background_0
+      213: -7645206834251926612
+    second: BarrelsOnRoof_0
   - first:
-      213: -5241213784488118642
-    second: Factory_Background_1
+      213: 601291917682036330
+    second: BarrelsOnRoof_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 5
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -92,38 +92,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Factory_Background_0
+      name: BarrelsOnRoof_0
       rect:
         serializedVersion: 2
-        x: 435
-        y: 1
-        width: 1482
-        height: 654
+        x: 455
+        y: 177
+        width: 1305
+        height: 722
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -518.5, y: -327.5}
-        - {x: -518.5, y: 327.5}
-        - {x: 958.5, y: 323.5}
-        - {x: 958.5, y: -323.5}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99a2be9eb9017f04faabe8d293e3fa08
-      internalID: 5669924347154653313
+      spriteID: 827c8ad1bd7eb0548ac2353129d4566a
+      internalID: -7645206834251926612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Factory_Background_1
+      name: BarrelsOnRoof_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3
-        width: 431
-        height: 651
+        x: 576
+        y: 12
+        width: 225
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5005fc0a24215240a4c1fbb7d407ae5
-      internalID: -5241213784488118642
+      spriteID: d44f9efad3adea14b9fa82f9ef15ba95
+      internalID: 601291917682036330
       vertices: []
       indices: 
       edges: []

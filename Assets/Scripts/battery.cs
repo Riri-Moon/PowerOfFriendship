@@ -11,7 +11,7 @@ public class battery : MonoBehaviour
 	[SerializeField] public float speed;
     private Inventory duration;
     public Flashlight.flash Flash;
-   public  PickItUp Des_name;
+  // public  PickItUp Des_name;
     float OriginalAmount;
     bool Ended;
     private void Start()

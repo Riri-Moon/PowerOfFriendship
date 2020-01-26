@@ -67,7 +67,6 @@ public class GrabThat : MonoBehaviour
     {
         Gizmos.color = Color.green;
 
-        // Gizmos.DrawLine(transform.position, transform.position + Vector3.right * transform.localScale.x * distance);
         float leftDot = player.transform.lossyScale.x;
 
         if (leftDot > 0.9f)
