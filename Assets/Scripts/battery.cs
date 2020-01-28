@@ -17,7 +17,7 @@ public class battery : MonoBehaviour
     private void Start()
     {
         OriginalAmount = currentAmount;
-        duration = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        duration = GameObject.Find("Player").GetComponent<Inventory>();
     }
     void Update()
     {       

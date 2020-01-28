@@ -5,10 +5,11 @@ using System;
 
 public class KillPlayer : MonoBehaviour
 {
-     GameObject Drop;
+    GameObject Drop;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+		
         Drop = GameObject.FindGameObjectWithTag("Drop");
 
 
@@ -22,6 +23,7 @@ public class KillPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+		
         if (collision.transform.CompareTag("Road"))
         {
 

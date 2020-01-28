@@ -33,7 +33,7 @@ public class Inventory_script : MonoBehaviour
 	void ActivateMenu()
 	{
 		Time.timeScale = 0;
-		AudioListener.pause = true;
+		//AudioListener.pause = true;
 		Inventory.SetActive(true);
 		hud.SetActive(false);
 		player.SetActive(false);
@@ -42,7 +42,7 @@ public class Inventory_script : MonoBehaviour
 	public void DeactivateMenu()
 	{
 		Time.timeScale = 1;
-		AudioListener.pause = false;
+		//AudioListener.pause = false;
 		Inventory.SetActive(false);
 		isPaused = false;
 		hud.SetActive(true);

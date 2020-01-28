@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pauseMenu : MonoBehaviour
 {
+	
 	[SerializeField] private GameObject pauseMenuUI;
 	
 	[SerializeField] private GameObject hud;
+			
+	[SerializeField] private GameObject musico;
 		
 	[SerializeField] private bool isPaused;
 	
@@ -40,19 +44,31 @@ public class pauseMenu : MonoBehaviour
 	void ActivateMenu()
 	{
 		Time.timeScale= 0;
-		AudioListener.pause=true;
+	//	AudioListener.pause=true;
 		pauseMenuUI.SetActive(true);
 		hud.SetActive(false);
 		player.SetActive(false);
+		musico.SetActive(false);
 	}
 	
 	public void DeactivateMenu()
 	{
 		Time.timeScale=1;
-		AudioListener.pause=false;
+	//	AudioListener.pause=false;
 		pauseMenuUI.SetActive(false);
 		isPaused = false;
 		hud.SetActive(true);
 		player.SetActive(true);
+		musico.SetActive(true);
+	}
+	
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
+	
+	public void RestartGame()
+	{
+		SceneManager.LoadScene(1);
 	}
 }

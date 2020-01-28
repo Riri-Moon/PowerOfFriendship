@@ -20,7 +20,7 @@ namespace Flashlight
         {
             light.enabled = false;
             //
-            duration = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+            duration = GameObject.Find("Player").GetComponent<Inventory>();
             
         }
 

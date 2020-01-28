@@ -14,10 +14,11 @@ public class PickItUp : MonoBehaviour
 	public GameObject document_1;
     bool picked_battery=false;
     string component;
+	
     public void Start() 
     {
         inventory = GameObject.Find("Player").GetComponent<Inventory>();
-       
+	
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -30,16 +31,21 @@ public class PickItUp : MonoBehaviour
                 Debug.Log(component);
                 if(component == "Pick_Battery" && inventory.isfull[2]==false)
                 {
+					
                     inventory.isfull[2] = true;
                     gameObject.transform.localScale += new Vector3(2, 2, 2);
                     Instantiate(itemButton, inventory.slots[2].transform, false);
                     Destroy(gameObject);
+					document_1.SetActive(true);
                 }
                 else if (component == "Document1" && inventory.isfull[3] == false)
                 {
-                    inventory.isfull[3] = true;
+	 
+                  /* inventory.isfull[3] = true;
                     gameObject.transform.localScale += new Vector3(2, 2, 2);
                     Instantiate(itemButton, inventory.slots[3].transform, false);
+					*/
+	
                     Destroy(gameObject);
 					document_1.SetActive(true);
 					slot_docuemnt.SetActive(true);
@@ -49,10 +55,45 @@ public class PickItUp : MonoBehaviour
                 }
                 else if (component == "Pick_Key" && inventory.isfull[1] == false)
                 {
+					
                     inventory.isfull[1] = true;
                     gameObject.transform.localScale += new Vector3(2, 2, 2);
                     Instantiate(itemButton, inventory.slots[1].transform, false);
                     Destroy(gameObject);
+					document_1.SetActive(true);
+					slot_docuemnt.SetActive(true);
+
+                }
+				
+				else if (component == "instructions")
+                {
+                    Destroy(gameObject);
+					document_1.SetActive(true);
+					slot_docuemnt.SetActive(true);
+                }
+				else if (component == "document2" )
+                {
+                  /* inventory.isfull[3] = true;
+                    gameObject.transform.localScale += new Vector3(2, 2, 2);
+                    Instantiate(itemButton, inventory.slots[3].transform, false);
+					*/
+                    Destroy(gameObject);
+					document_1.SetActive(true);
+					slot_docuemnt.SetActive(true);
+					
+
+                }
+				
+				else if (component == "document3" )
+                {
+                  /* inventory.isfull[3] = true;
+                    gameObject.transform.localScale += new Vector3(2, 2, 2);
+                    Instantiate(itemButton, inventory.slots[3].transform, false);
+					*/
+                    Destroy(gameObject);
+					document_1.SetActive(true);
+					slot_docuemnt.SetActive(true);
+					
 
                 }
 

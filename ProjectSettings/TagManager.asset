@@ -12,6 +12,11 @@ TagManager:
   - Document1
   - Drop
   - Road
+  - instructions
+  - document2
+  - document3
+  - Factory_Doors
+  - Pick_Key
   layers:
   - Default
   - TransparentFX
