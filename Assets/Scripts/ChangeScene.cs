@@ -33,10 +33,12 @@ public class ChangeScene : MonoBehaviour
 
 public class ChangeScene : MonoBehaviour
 {
+	public AudioSource factory;
 	public Rigidbody2D Player;
 	public int Level;
 	public Transform New_Position;
 	public GameObject Fact_doors;
+	public GameObject hudbatrapna;
 	[SerializeField] private GameObject dement;
 	[SerializeField] private GameObject completed;
 	private Inventory inventory;
@@ -48,19 +50,25 @@ public class ChangeScene : MonoBehaviour
 	
 	void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+		factory = GetComponent<AudioSource>();
+	
+		if (collision.CompareTag("Player"))
         {
 			if(Fact_doors.tag != "Factory_Doors")
 			{
+				factory.Play();
+
 				Player.position = New_Position.position;
 			}
 			else if(Fact_doors.tag == "Factory_Doors" && inventory.isfull[1]!= true) 
 			{
+
+
 				dement.SetActive(true);
 			}
 			else if (Fact_doors.tag == "Factory_Doors" && inventory.isfull[1]==true) 
 			{
-				
+				hudbatrapna.SetActive(false);
 				completed.SetActive(true);
 				Player.position = New_Position.position; 
 			}

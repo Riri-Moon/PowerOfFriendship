@@ -61,7 +61,12 @@ public class pauseMenu : MonoBehaviour
 		player.SetActive(true);
 		musico.SetActive(true);
 	}
-	
+
+	public void MainMenu()
+	{
+		SceneManager.LoadScene(0);
+	}
+
 	public void QuitGame()
 	{
 		Application.Quit();

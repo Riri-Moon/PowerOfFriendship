@@ -66,11 +66,14 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (MoveRight == true)
+        if (collision.CompareTag("Edge"))
         {
-            MoveRight = false;
+            if (MoveRight == true)
+            {
+                MoveRight = false;
+            }
+            else MoveRight = true;
         }
-        else MoveRight = true;
     }
     
 
